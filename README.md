@@ -1,1 +1,1 @@
-# Typescript-Angualar
+# angular-skeleton
