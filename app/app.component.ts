@@ -17,11 +17,11 @@ import { Component } from "@angular/core";
       </div>
       <div class="col-md-3">Home</div>
       <div class="col-md-3">Work</div>
-      <div class="col-md-3">
+      <div class="col-md-3" id="drinksEditor">
         <h4>Task Editor</h4>
-        <p>New Description: {{clickedTask.description}}</p>
-        <p>Priority Level: {{clickedTask.priority}}</p>
-        <p>Task Categorisation: {{clickedTask.category}}</p>
+        <p>New Description: <input [(ngModel)]="clickedTask.description"></p>
+        <p>Priority Level: <input [(ngModel)]="clickedTask.priority"></p>
+        <p>Task Categorisation: <input [(ngModel)]="clickedTask.category"></p>
       </div>
 
     </div>
@@ -46,11 +46,11 @@ import { Component } from "@angular/core";
           <hr>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6" id="drinksEditor">
         <h4>Drinks Editor</h4>
-        <p>Drinks' Name: {{clickedDrink.name}}</p>
-        <p>Drinks' Brand: {{clickedDrink.brand}}</p>
-        <p>Drinks A/C(%): {{clickedDrink.alcohol}}</p>
+        <p>Drinks' Name: <input [(ngModel)]="clickedDrink.name"></p>
+        <p>Drinks' Brand: <input [(ngModel)]="clickedDrink.brand"></p>
+        <p>Drinks A/C(%): <input [(ngModel)]="clickedDrink.alcohol"></p>
       </div>
     </div>
   </div>
