@@ -6,18 +6,24 @@ import { Component } from "@angular/core";
   <div class="container">
     <h1 class="jumbotron">JS Angular Intro</h1>
     <div class="row">
-      <div class="col-md-3">Home</div>
-      <div class="col-md-3">Work</div>
-      <div class="col-md-3">Hobby</div>
       <div class="col-md-3" id="editor">
         <div *ngFor="let allTasks of parentTasks" id="tasksDisplay">
           <p>Task Description: {{allTasks.description}}</p>
           <p>Priority Level: {{allTasks.priority}}</p>
-          <p>Task categorisation: {{allTasks.category}}</p>
-          <button (click)="editTask()">Change Task</button>
+          <p>Task Categorisation: {{allTasks.category}}</p>
+          <button (click)="editTask(allTasks)">Change Task</button>
           <hr>
         </div>
       </div>
+      <div class="col-md-3">Home</div>
+      <div class="col-md-3">Work</div>
+      <div class="col-md-3">
+        <h4>Task Editor</h4>
+        <p>New Description: {{clickedTask.description}}</p>
+        <p>Priority Level: {{clickedTask.priority}}</p>
+        <p>Task Categorisation: {{clickedTask.category}}</p>
+      </div>
+
     </div>
     <hr>
 
@@ -29,18 +35,23 @@ import { Component } from "@angular/core";
         <button (click)="addKegToTaps()">Add Brand to the List</button><hr>
         <h4>Liqour on Tap!</h4>
         <div id="kegDisplay" *ngFor="let currentKeg of kegsOnTap">
-          <p>Keg name: {{currentKeg.name}}</p>
+          <p>Name of Drink: {{currentKeg.name}}</p>
           <p> Brew Brand: {{currentKeg.brand}}</p>
           <p>Price per pint: Ksh.{{currentKeg.price}}</p>
           <p>Alcohol Content: {{currentKeg.alcohol}}%</p>
           <p>Remaining pints: {{currentKeg.pintsContained}}</p>
           <input type="number" min="1" id="pouredBeer">
-          <button (click)="getBeer(currentKeg)">Pour Some Beer</button><br>
-          <button (click)="editCurrentDrinks()">Edit Drink Details</button>
+          <button (click)="getBeer()">Pour Some Beer</button><br><br>
+          <button (click)="editCurrentDrinks(currentKeg)">Edit Drink Details</button>
           <hr>
         </div>
       </div>
-      <div class="col-md-6"></div>
+      <div class="col-md-6">
+        <h4>Drinks Editor</h4>
+        <p>Drinks' Name: {{clickedDrink.name}}</p>
+        <p>Drinks' Brand: {{clickedDrink.brand}}</p>
+        <p>Drinks A/C(%): {{clickedDrink.alcohol}}</p>
+      </div>
     </div>
   </div>
   `
@@ -64,13 +75,18 @@ export class AppComponent {
     new Task("Play video Game","Low","Hobby"),
     new Task("Cook Food","High","Home")
   ];
-  editTask() {
 
+  clickedTask: Task = this.parentTasks[0];
+  editTask(selectedTask: Task) {
+    this.clickedTask = selectedTask;
   }
-  editCurrentDrinks() {
 
+  clickedDrink: Keg = this.kegsOnTap[0];
+  editCurrentDrinks(selectedDrink: Keg) {
+    this.clickedDrink = selectedDrink;
   }
-  getBeer(pourBeerClicked: Task) {
+
+  getBeer() {
 
   }
 }
