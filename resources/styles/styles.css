@@ -4,3 +4,15 @@ h1{
 .jumbotron{
   text-align: center;
 }
+.row{
+  text-align: center;
+}
+#kegDisplay{
+  padding: 10px;
+}
+hr{
+  height: 0.4px;
+  background-image: linear-gradient(to left,
+    rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.2));
+}
