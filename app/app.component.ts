@@ -6,7 +6,7 @@ import { Keg } from "./keg.model";
   selector: 'my-apps',
   template: `
   <div class="container">
-    <h1 class="jumbotron">JS Angular Intro</h1>
+    <h1 class="jumbotron">Angular To_Do List</h1>
     <div class="row">
       <div class="col-md-4" id="editor">
         <task-list
@@ -14,6 +14,9 @@ import { Keg } from "./keg.model";
             (clickSender)="editTask($event)"
           ></task-list>
       </div>
+      <new-task
+          (newTaskToSend)="newTasKAddition($event)"
+        ></new-task>
       <edit-task
           [childClickedTask]="clickedTask"
           (doneEdittingChildTaskSender)="doneEdittingTasks($event)"
@@ -24,15 +27,15 @@ import { Keg } from "./keg.model";
 
     <h2 class="jumbotron">Tap Room App</h2>
     <div class="row">
-      <h3>Keg brands available</h3>
+      <h3>Keg Available on Tap!</h3>
       <div class="col-md-4">
-        <button (click)="addKegToTaps()">Add Brand to the List</button><hr>
         <h4>Liqour on Tap!</h4>
         <keg-list
             [childKegList]="kegsOnTap"
             (kegClickSender)="editCurrentDrinks($event)"
           ></keg-list>
       </div>
+      <new-tap></new-tap>
       <edit-keg
           [childClickedDrink]="clickedDrink"
           (doneEdittingChildKegSender)="doneEdittingDrinks($event)"
@@ -68,7 +71,9 @@ export class AppComponent {
   doneEdittingTasks() {
     this.clickedTask = null;
   }
-
+  newTasKAddition(newTask: Task){
+    this.parentTasks.push(newTask);
+  }
 
   clickedDrink: Keg = null;
   editCurrentDrinks(selectedDrink: Keg) {
