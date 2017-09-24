@@ -22,3 +22,7 @@ input[type=number]{
 p input{
   text-align: center;
 }
+h3 {
+  text-decoration: underline;
+  padding: 30px;
+}
