@@ -35,7 +35,9 @@ import { Keg } from "./keg.model";
             (kegClickSender)="editCurrentDrinks($event)"
           ></keg-list>
       </div>
-      <new-tap></new-tap>
+      <new-tap
+          (newTapToSend)="newTap($event)"
+        ></new-tap>
       <edit-keg
           [childClickedDrink]="clickedDrink"
           (doneEdittingChildKegSender)="doneEdittingDrinks($event)"
@@ -81,6 +83,9 @@ export class AppComponent {
   }
   doneEdittingDrinks() {
     this.clickedDrink = null;
+  }
+  newTap(newKeg: Keg){
+    this.kegsOnTap.push(newKeg);
   }
 
   getBeer() {
