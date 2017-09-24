@@ -28,7 +28,7 @@ var EditKegComponent = (function () {
     EditKegComponent = __decorate([
         core_1.Component({
             selector: "edit-keg",
-            template: "\n  <div class=\"col-md-8\" id=\"drinksEditor\" *ngIf=\"childClickedDrink\">\n    <h4>Drinks Editor</h4>\n    <p>Drinks' Name: <input [(ngModel)]=\"childClickedDrink.name\"></p>\n    <p>Drinks' Brand: <input [(ngModel)]=\"childClickedDrink.brand\"></p>\n    <p>Drinks A/C(%): <input [(ngModel)]=\"childClickedDrink.alcohol\"></p>\n    <button (click)=\"doneEdittingChildDrinks()\">save</button>\n  </div>\n  "
+            template: "\n  <div class=\"col-md-4\" id=\"drinksEditor\" *ngIf=\"childClickedDrink\">\n    <h4>Drinks Editor</h4>\n    <p>Drinks' Name: <input [(ngModel)]=\"childClickedDrink.name\"></p>\n    <p>Drinks' Brand: <input [(ngModel)]=\"childClickedDrink.brand\"></p>\n    <p>Drinks A/C(%): <input [(ngModel)]=\"childClickedDrink.alcohol\"></p>\n    <button (click)=\"doneEdittingChildDrinks()\">save</button>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], EditKegComponent);

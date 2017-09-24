@@ -39,18 +39,24 @@ var AppComponent = (function () {
     AppComponent.prototype.doneEdittingTasks = function () {
         this.clickedTask = null;
     };
+    AppComponent.prototype.newTasKAddition = function (newTask) {
+        this.parentTasks.push(newTask);
+    };
     AppComponent.prototype.editCurrentDrinks = function (selectedDrink) {
         this.clickedDrink = selectedDrink;
     };
     AppComponent.prototype.doneEdittingDrinks = function () {
         this.clickedDrink = null;
     };
+    AppComponent.prototype.newTap = function (newKeg) {
+        this.kegsOnTap.push(newKeg);
+    };
     AppComponent.prototype.getBeer = function () {
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-apps',
-            template: "\n  <div class=\"container\">\n    <h1 class=\"jumbotron\">JS Angular Intro</h1>\n    <div class=\"row\">\n      <div class=\"col-md-4\" id=\"editor\">\n        <task-list\n            [childTaskList]=\"parentTasks\"\n            (clickSender)=\"editTask($event)\"\n          ></task-list>\n      </div>\n      <edit-task\n          [childClickedTask]=\"clickedTask\"\n          (doneEdittingChildTaskSender)=\"doneEdittingTasks($event)\"\n        ></edit-task>\n    </div>\n\n    <hr>\n\n    <h2 class=\"jumbotron\">Tap Room App</h2>\n    <div class=\"row\">\n      <h3>Keg brands available</h3>\n      <div class=\"col-md-4\">\n        <button (click)=\"addKegToTaps()\">Add Brand to the List</button><hr>\n        <h4>Liqour on Tap!</h4>\n        <keg-list\n            [childKegList]=\"kegsOnTap\"\n            (kegClickSender)=\"editCurrentDrinks($event)\"\n          ></keg-list>\n      </div>\n      <edit-keg\n          [childClickedDrink]=\"clickedDrink\"\n          (doneEdittingChildKegSender)=\"doneEdittingDrinks($event)\"\n        ></edit-keg>\n    </div>\n  </div>\n  "
+            template: "\n  <div class=\"container\">\n    <h1 class=\"jumbotron\">Angular To_Do List</h1>\n    <div class=\"row\">\n      <div class=\"col-md-4\" id=\"editor\">\n        <task-list\n            [childTaskList]=\"parentTasks\"\n            (clickSender)=\"editTask($event)\"\n          ></task-list>\n      </div>\n      <new-task\n          (newTaskToSend)=\"newTasKAddition($event)\"\n        ></new-task>\n      <edit-task\n          [childClickedTask]=\"clickedTask\"\n          (doneEdittingChildTaskSender)=\"doneEdittingTasks($event)\"\n        ></edit-task>\n    </div>\n\n    <hr>\n\n    <h2 class=\"jumbotron\">Tap Room App</h2>\n    <div class=\"row\">\n      <h3>Keg Available on Tap!</h3>\n      <div class=\"col-md-4\">\n        <h4>Liqour on Tap!</h4>\n        <keg-list\n            [childKegList]=\"kegsOnTap\"\n            (kegClickSender)=\"editCurrentDrinks($event)\"\n          ></keg-list>\n      </div>\n      <new-tap\n          (newTapToSend)=\"newTap($event)\"\n        ></new-tap>\n      <edit-keg\n          [childClickedDrink]=\"clickedDrink\"\n          (doneEdittingChildKegSender)=\"doneEdittingDrinks($event)\"\n        ></edit-keg>\n    </div>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
