@@ -11,13 +11,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
+var forms_1 = require("@angular/forms");
+var task_list_component_1 = require("./task-list.component");
+var keg_list_component_1 = require("./keg-list.component");
+var edit_task_component_1 = require("./edit-task.component");
+var edit_keg_component_1 = require("./edit-keg.component");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent],
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                keg_list_component_1.KegListComponent,
+                task_list_component_1.TaskListComponent,
+                edit_task_component_1.EditTaskComponent,
+                edit_keg_component_1.EditKegComponent
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
