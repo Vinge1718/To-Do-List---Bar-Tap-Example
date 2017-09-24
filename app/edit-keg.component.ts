@@ -4,7 +4,7 @@ import { Keg } from "./keg.model";
 @Component({
   selector: "edit-keg",
   template:`
-  <div class="col-md-6" id="drinksEditor" *ngIf="childClickedDrink">
+  <div class="col-md-8" id="drinksEditor" *ngIf="childClickedDrink">
     <h4>Drinks Editor</h4>
     <p>Drinks' Name: <input [(ngModel)]="childClickedDrink.name"></p>
     <p>Drinks' Brand: <input [(ngModel)]="childClickedDrink.brand"></p>

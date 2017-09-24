@@ -28,7 +28,7 @@ var EditTaskComponent = (function () {
     EditTaskComponent = __decorate([
         core_1.Component({
             selector: "edit-task",
-            template: "\n  <div class=\"col-md-6\" id=\"drinksEditor\" *ngIf=\"childClickedTask\">\n    <h4>Task Editor</h4>\n    <p>New Description: <input [(ngModel)]=\"childClickedTask.description\"></p>\n    <p>Priority Level: <input [(ngModel)]=\"childClickedTask.priority\"></p>\n    <p>Task Category: <input [(ngModel)]=\"childClickedTask.category\"></p>\n    <button (click)=\"doneEdittingChildTasks()\">save</button>\n  </div>\n  "
+            template: "\n  <div class=\"col-md-8\" id=\"drinksEditor\" *ngIf=\"childClickedTask\">\n    <h4>Task Editor</h4>\n    <p>New Description: <input [(ngModel)]=\"childClickedTask.description\"></p>\n    <p>Priority Level: <input [(ngModel)]=\"childClickedTask.priority\"></p>\n    <p>Task Category: <input [(ngModel)]=\"childClickedTask.category\"></p>\n    <button (click)=\"doneEdittingChildTasks()\">save</button>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], EditTaskComponent);

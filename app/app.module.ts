@@ -6,6 +6,8 @@ import { TaskListComponent } from "./task-list.component"
 import { KegListComponent } from "./keg-list.component"
 import { EditTaskComponent} from "./edit-task.component"
 import { EditKegComponent} from "./edit-keg.component"
+import { NewTaskComponent } from "./new-task.component"
+import { NewKegComponent } from "./new-keg.component"
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import { EditKegComponent} from "./edit-keg.component"
     KegListComponent,
     TaskListComponent,
     EditTaskComponent,
-    EditKegComponent
+    EditKegComponent,
+    NewKegComponent,
+    NewTaskComponent
    ],
   bootstrap: [AppComponent]
 })

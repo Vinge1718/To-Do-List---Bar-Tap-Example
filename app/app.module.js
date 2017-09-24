@@ -16,6 +16,8 @@ var task_list_component_1 = require("./task-list.component");
 var keg_list_component_1 = require("./keg-list.component");
 var edit_task_component_1 = require("./edit-task.component");
 var edit_keg_component_1 = require("./edit-keg.component");
+var new_task_component_1 = require("./new-task.component");
+var new_keg_component_1 = require("./new-keg.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,7 +32,9 @@ var AppModule = (function () {
                 keg_list_component_1.KegListComponent,
                 task_list_component_1.TaskListComponent,
                 edit_task_component_1.EditTaskComponent,
-                edit_keg_component_1.EditKegComponent
+                edit_keg_component_1.EditKegComponent,
+                new_keg_component_1.NewKegComponent,
+                new_task_component_1.NewTaskComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

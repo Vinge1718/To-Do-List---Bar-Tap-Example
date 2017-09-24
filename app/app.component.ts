@@ -8,7 +8,7 @@ import { Keg } from "./keg.model";
   <div class="container">
     <h1 class="jumbotron">JS Angular Intro</h1>
     <div class="row">
-      <div class="col-md-6" id="editor">
+      <div class="col-md-4" id="editor">
         <task-list
             [childTaskList]="parentTasks"
             (clickSender)="editTask($event)"
@@ -25,7 +25,7 @@ import { Keg } from "./keg.model";
     <h2 class="jumbotron">Tap Room App</h2>
     <div class="row">
       <h3>Keg brands available</h3>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <button (click)="addKegToTaps()">Add Brand to the List</button><hr>
         <h4>Liqour on Tap!</h4>
         <keg-list
