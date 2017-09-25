@@ -7,13 +7,24 @@ import { Task } from "./task.model";
 })
 
 export class CompleteTaskComponent implements PipeTransform{
-  transform(input: Task[]){
+  transform(input: Task[], selectedCompletion){
     var output: Task[] = [];
-    for(var i = 0; i<input.length; i++){
-      if(input[i].done === false){
-        output.push(input[i]);
+    if(selectedCompletion === "complete"){
+      for(var i=0; i<input.length;i++){
+        if(input[i].done===true){
+          output.push(input[i]);
+        }
       }
+      return output;
+    }else if(selectedCompletion === "incomplete"){
+      for (var i = 0; i<input.length;i++){
+        if(input[i].done===false){
+          output.push(input[i]);
+        }
+      }
+      return output;
+    }else{
+      return input;
     }
-    return output;
   }
 }

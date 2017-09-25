@@ -12,9 +12,13 @@ var core_1 = require("@angular/core");
 var KegListComponent = (function () {
     function KegListComponent() {
         this.kegClickSender = new core_1.EventEmitter();
+        this.selectedView = "all";
     }
     KegListComponent.prototype.editCurrentDrinks = function (clickedKeg) {
         this.kegClickSender.emit(clickedKeg);
+    };
+    KegListComponent.prototype.uponSelection = function (preferedView) {
+        this.selectedView = preferedView;
     };
     __decorate([
         core_1.Input(), 
@@ -27,7 +31,7 @@ var KegListComponent = (function () {
     KegListComponent = __decorate([
         core_1.Component({
             selector: "keg-list",
-            template: "\n   <div id=\"kegDisplay\" *ngFor=\"let currentKeg of childKegList\">\n     <p>Name of Drink: {{currentKeg.name}}</p>\n     <p> Brew Brand: {{currentKeg.brand}}</p>\n     <p>Price per pint: Ksh.{{currentKeg.price}}</p>\n     <p>Alcohol Content: {{currentKeg.alcohol}}%</p>\n     <p>Remaining pints: {{currentKeg.pintsContained}}</p>\n     <input type=\"number\" min=\"1\" id=\"pouredBeer\">\n     <button (click)=\"getBeer()\">Pour Some Beer</button><br><br>\n     <button (click)=\"editCurrentDrinks(currentKeg)\">Edit Drink Details</button>\n     <hr>\n   </div>\n   "
+            template: "\n   <select (change)=\"uponSelection($event.target.value)\">\n    <option value=\"all\">All Available Liquour on Tap</option>\n    <option value=\"A/C above 10%\">Alcohol Content exceeding 10%</option>\n    <option value=\"A/C below 10%\">Alcohol Content below 10%</option>\n    <option value=\"Premium Liqour\">Keg Priced above Ksh.500</option>\n   </select>\n   <hr>\n   <div id=\"kegDisplay\" *ngFor=\"let currentKeg of childKegList | alcoholFilter:selectedView\">\n     <p>Name of Drink: {{currentKeg.name}}</p>\n     <p> Brew Brand: {{currentKeg.brand}}</p>\n     <p>Price per pint: Ksh.{{currentKeg.price}}</p>\n     <p>Alcohol Content: {{currentKeg.alcohol}}%</p>\n     <p>Remaining pints: {{currentKeg.pintsContained}}</p>\n     <input type=\"number\" min=\"1\" id=\"pouredBeer\">\n     <button (click)=\"getBeer()\">Pour Some Beer</button><br><br>\n     <button (click)=\"editCurrentDrinks(currentKeg)\">Edit Drink Details</button>\n     <hr>\n   </div>\n   "
         }), 
         __metadata('design:paramtypes', [])
     ], KegListComponent);

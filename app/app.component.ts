@@ -49,9 +49,9 @@ import { Keg } from "./keg.model";
 
 export class AppComponent {
   public kegsOnTap: Keg[] = [
-    new Keg("Zcolsh", "EBAL", 600, 4.8),
+    new Keg("Zcolsh", "EBAL", 600, 12.8),
     new Keg("Kifabisch", "Kero", 750, 6.5),
-    new Keg("Nzstip", "BrewsBas", 450, 6.5),
+    new Keg("Nzstip", "BrewsBas", 450, 17.5),
     new Keg("lamstout", "DTP", 300, 5.2)
   ];
   public parentTasks: Task[] = [

@@ -14,9 +14,9 @@ var keg_model_1 = require("./keg.model");
 var AppComponent = (function () {
     function AppComponent() {
         this.kegsOnTap = [
-            new keg_model_1.Keg("Zcolsh", "EBAL", 600, 4.8),
+            new keg_model_1.Keg("Zcolsh", "EBAL", 600, 12.8),
             new keg_model_1.Keg("Kifabisch", "Kero", 750, 6.5),
-            new keg_model_1.Keg("Nzstip", "BrewsBas", 450, 6.5),
+            new keg_model_1.Keg("Nzstip", "BrewsBas", 450, 17.5),
             new keg_model_1.Keg("lamstout", "DTP", 300, 5.2)
         ];
         this.parentTasks = [
