@@ -17,7 +17,7 @@ import { Keg } from "./keg.model"
      <p>Price per pint: Ksh.{{currentKeg.price}}</p>
      <p>Alcohol Content: {{currentKeg.alcohol}}%</p>
      <p>Remaining pints: {{currentKeg.pintsContained}}</p>
-     <input type="number" min="1" id="pouredBeer" #amountPoured.value>
+     <input type="number" min="1" id="pouredBeer" #amountPoured>
      <button (click)="getBeer(amountPoured.value); amountPoured.value='';">Pour Some Beer</button><br><br>
      <button (click)="editCurrentDrinks(currentKeg)">Edit Drink Details</button>
      <hr>
@@ -32,10 +32,12 @@ import { Keg } from "./keg.model"
       this.kegClickSender.emit(clickedKeg);
   }
 
-
+  public currentKeg: Keg;
   getBeer(pintsPoured: number){
   var beerPoured: number = pintsPoured;
-  
+  //;var currentKegLevel = this.currentKeg.pintsContained;
+  console.log(beerPoured);
+  //console.log(currentKegLevel);
   }
 
   public selectedView: string = "all";
