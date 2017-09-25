@@ -14,7 +14,8 @@ import { Task } from "./task.model";
     <p>Task Description: {{allTasks.description}}</p>
     <p>Priority Level: {{allTasks.priority}}</p>
     <p>Task Categorisation: {{allTasks.category}}</p>
-    <button (click)="editTask(allTasks)">Change Task</button>
+    <button (click)="editTask(allTasks)">Change Task</button><br>
+    <task-update [task]="allTasks"></task-update>
     <hr>
   </div>
   `
