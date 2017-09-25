@@ -88,7 +88,4 @@ export class AppComponent {
     this.kegsOnTap.push(newKeg);
   }
 
-  getBeer() {
-
-  }
 }
