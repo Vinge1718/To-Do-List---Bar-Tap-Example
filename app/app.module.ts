@@ -8,6 +8,7 @@ import { EditTaskComponent} from "./edit-task.component"
 import { EditKegComponent} from "./edit-keg.component"
 import { NewTaskComponent } from "./new-task.component"
 import { NewKegComponent } from "./new-keg.component"
+import { CompleteTaskComponent } from "./task-pipe.component"
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { NewKegComponent } from "./new-keg.component"
     EditTaskComponent,
     EditKegComponent,
     NewKegComponent,
-    NewTaskComponent
+    NewTaskComponent,
+    CompleteTaskComponent
    ],
   bootstrap: [AppComponent]
 })
