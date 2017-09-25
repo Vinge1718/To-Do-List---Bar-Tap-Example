@@ -20,6 +20,7 @@ var new_task_component_1 = require("./new-task.component");
 var new_keg_component_1 = require("./new-keg.component");
 var task_pipe_component_1 = require("./task-pipe.component");
 var keg_pipe_component_1 = require("./keg-pipe.component");
+var task_component_1 = require("./task.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,7 +39,8 @@ var AppModule = (function () {
                 new_keg_component_1.NewKegComponent,
                 new_task_component_1.NewTaskComponent,
                 task_pipe_component_1.CompleteTaskComponent,
-                keg_pipe_component_1.KegViewFilterComponent
+                keg_pipe_component_1.KegViewFilterComponent,
+                task_component_1.TaskCheckComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

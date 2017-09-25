@@ -31,7 +31,7 @@ var TaskListComponent = (function () {
     TaskListComponent = __decorate([
         core_1.Component({
             selector: "task-list",
-            template: "\n  <select (change)=\"onSelection($event.target.value)\">\n    <option value=\"all\">All Tasks</option>\n    <option value=\"incomplete\">Due for Completion</option>\n    <option value=\"complete\">Completed Tasks</option>\n  </select>\n  <hr>\n  <div *ngFor=\"let allTasks of childTaskList | finished:selectedViewOption\">\n    <p>Task Description: {{allTasks.description}}</p>\n    <p>Priority Level: {{allTasks.priority}}</p>\n    <p>Task Categorisation: {{allTasks.category}}</p>\n    <button (click)=\"editTask(allTasks)\">Change Task</button>\n    <hr>\n  </div>\n  "
+            template: "\n  <select (change)=\"onSelection($event.target.value)\">\n    <option value=\"all\">All Tasks</option>\n    <option value=\"incomplete\">Due for Completion</option>\n    <option value=\"complete\">Completed Tasks</option>\n  </select>\n  <hr>\n  <div *ngFor=\"let allTasks of childTaskList | finished:selectedViewOption\">\n    <p>Task Description: {{allTasks.description}}</p>\n    <p>Priority Level: {{allTasks.priority}}</p>\n    <p>Task Categorisation: {{allTasks.category}}</p>\n    <button (click)=\"editTask(allTasks)\">Change Task</button><br>\n    <task-update [task]=\"allTasks\"></task-update>\n    <hr>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], TaskListComponent);
