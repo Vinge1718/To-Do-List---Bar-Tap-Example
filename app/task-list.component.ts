@@ -4,7 +4,7 @@ import { Task } from "./task.model";
 @Component({
   selector: "task-list",
   template:`
-  <select (change)="onSelection($event.target.value)">
+  <select (change)="onSelection($event.target.value)" class="filter">
     <option value="all">All Tasks</option>
     <option value="incomplete">Due for Completion</option>
     <option value="complete">Completed Tasks</option>
