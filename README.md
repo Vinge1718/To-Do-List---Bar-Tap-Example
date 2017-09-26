@@ -22,7 +22,7 @@ Vinge1718
 
 ## License
 
-Copyright (c) [2017], [Njonge Victor]
+Copyright (c) 2017, Njonge Victor K
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
