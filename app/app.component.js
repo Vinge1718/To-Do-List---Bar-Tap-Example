@@ -51,8 +51,6 @@ var AppComponent = (function () {
     AppComponent.prototype.newTap = function (newKeg) {
         this.kegsOnTap.push(newKeg);
     };
-    AppComponent.prototype.getBeer = function () {
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-apps',

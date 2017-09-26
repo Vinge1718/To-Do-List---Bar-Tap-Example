@@ -30,7 +30,7 @@ var KegViewFilterComponent = (function () {
             }
             return output;
         }
-        else if (kegFilters === "Premium Liqour)") {
+        else if (kegFilters === "Premium Liqour") {
             for (var i = 0; i < input.length; i++) {
                 if (input[i].price >= 500) {
                     output.push(input[i]);
